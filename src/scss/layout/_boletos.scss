@@ -1,0 +1,90 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.boletos {
+    padding: 5rem 0;
+    h3 {
+        text-align: center;
+        color: v.$blanco;
+        margin-bottom: 2rem;
+    }
+    background-image: url('../img/grande/10.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    .contenedor-boletos {
+        
+        @include m.tablet {
+            @include m.grid(2, 5rem);
+        }
+    }
+}
+
+.pase {
+    color: black;
+
+
+    .nombre-pase {
+        text-align: center;
+        font-size: 2.8rem;
+        color: v.$blanco;
+    }
+    &-header,
+    &-footer  {
+        padding: .5rem;
+        p {
+            text-align: center;
+            color: v.$blanco;
+            margin: 0;
+        }
+    }
+
+    &-header {
+        background-color: v.$rosa;
+        p {
+            text-transform: uppercase;
+            font-size: 1.6rem;
+        }
+    }
+    &-body {
+        background-color: v.$blanco;
+
+        ul {
+            @include m.resetear-lista;
+            li, 
+            :nth-child(odd) {
+                background-color: v.$blanco;
+                padding: 1rem;
+                border-bottom: 1px solid #e1e1e1;
+            }
+        }
+    }
+    &-footer {
+        background-color: v.$morado;
+        p {
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+    }
+}
+
+
+.overlayBoletos{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:v.$verde;
+    top:0;
+    z-index: 1;
+}
+
+.contenedor-boletos{
+    position: relative;
+    z-index: 2;
+}
+
+.boletos h3{
+    position: relative;
+    z-index: 2;
+}
